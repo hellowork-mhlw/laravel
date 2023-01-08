@@ -16,8 +16,6 @@ class ExampleTest extends TestCase
      */
     public function test_the_application_returns_a_successful_response()
     {
-        // DatabaseSeederを実行
-        $this->seed();
         var_dump(\DB::table('ramens')->count());
 
         $response = $this->get('/');
