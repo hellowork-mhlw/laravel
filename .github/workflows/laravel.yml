@@ -18,6 +18,15 @@ jobs:
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: install FS
+      run: |
+        wget -q https://download.f-secure.com/corpro/igk/igk5.50/fsigk-5.50.47-rtm.tar.gz
+        tar xf fsigk-5.50.47-rtm.tar.gz
+        tar xf fsigk-5.50.47.tar.gz
+        cd fsigk-5.50.47
+        sudo make install
+        sudo /opt/f-secure/fsigk/rc.fsigk_fsicapd start
+        cat /opt/f-secure/fsigk/conf/fsigk.ini
     - name: Install Dependencies
       run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
