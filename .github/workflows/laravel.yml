@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: |
+        sudo apt install -y ncat
+        sudo update-alternatives --set nc /usr/bin/ncat
     - uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
@@ -27,7 +30,6 @@ jobs:
         sudo make install
         sudo /opt/f-secure/fsigk/rc.fsigk_fsicapd start
         cat /opt/f-secure/fsigk/conf/fsigk.ini
-    - uses: mxschmitt/action-tmate@v3
     - name: Install Dependencies
       run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
