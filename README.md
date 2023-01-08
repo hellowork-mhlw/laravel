@@ -8,6 +8,8 @@ DB_CONNECTION=sqlite php artisan migrate
 php artisan make:seeder RamenSeeder
 DB_CONNECTION=sqlite php artisan db:seed
 DB_CONNECTION=sqlite php artisan db:seed --class=RamenSeeder
+
+DB_CONNECTION=sqlite APP_KEY=$(php artisan key:generate --show) php artisan test
 ```
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
