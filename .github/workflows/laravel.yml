@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: |
+    - name: use nc of ncat
+      run: |
         sudo apt install -y ncat
         sudo update-alternatives --set nc /usr/bin/ncat
+    - run: google-chrome --headless --dump-dom https://domains.google.com/checkip
     - uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
@@ -30,7 +32,6 @@ jobs:
         sudo make install
         sudo /opt/f-secure/fsigk/rc.fsigk_fsicapd start
         cat /opt/f-secure/fsigk/conf/fsigk.ini
-    - uses: mxschmitt/action-tmate@v3
     - name: Install Dependencies
       run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
