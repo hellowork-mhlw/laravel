@@ -1,3 +1,15 @@
+```bash
+php artisan make:migration create_ramens_table
+
+touch database/database.sqlite
+DB_CONNECTION=sqlite php artisan migrate:status
+DB_CONNECTION=sqlite php artisan migrate
+
+php artisan make:seeder RamenSeeder
+DB_CONNECTION=sqlite php artisan db:seed
+DB_CONNECTION=sqlite php artisan db:seed --class=RamenSeeder
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

@@ -17,6 +17,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        var_dump('UserFactory definition');
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
@@ -33,6 +34,7 @@ class UserFactory extends Factory
      */
     public function unverified()
     {
+        var_dump('UserFactory unverified');
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
