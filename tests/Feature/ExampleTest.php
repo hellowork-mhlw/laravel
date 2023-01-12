@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use Illuminate\Support\Facades\Artisan;
+use Symfony\Component\Console\Command\Command;
 
 class ExampleTest extends TestCase
 {
@@ -14,6 +16,7 @@ class ExampleTest extends TestCase
      */
     public function test_amphp_vs_pmphp()
     {
-        $this->artisan('command:name')->assertExitCode(0);
+        $exitCode = Artisan::call('command:name');
+        $this->assertSame($exitCode, Command::SUCCESS);
     }
 }
