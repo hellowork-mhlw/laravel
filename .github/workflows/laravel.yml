@@ -16,6 +16,7 @@ jobs:
         ports:
           - 3306:3306
         env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: laravel
         options: >-
           --health-cmd "mysqladmin ping"
