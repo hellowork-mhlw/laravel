@@ -15,6 +15,7 @@ jobs:
         image: mysql
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: laravel
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
