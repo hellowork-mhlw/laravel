@@ -22,32 +22,17 @@ jobs:
           --health-retries 5
 
     steps:
-    - name: use nc of ncat
-      run: |
-        sudo apt install -y ncat
-        sudo update-alternatives --set nc /usr/bin/ncat
-    - run: google-chrome --headless --dump-dom https://domains.google.com/checkip
     - uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: install FS
-      run: |
-        wget -q https://download.f-secure.com/corpro/igk/igk5.50/fsigk-5.50.47-rtm.tar.gz
-        tar xf fsigk-5.50.47-rtm.tar.gz
-        tar xf fsigk-5.50.47.tar.gz
-        cd fsigk-5.50.47
-        sudo make install
-        sudo /opt/f-secure/fsigk/rc.fsigk_fsicapd start
-        cat /opt/f-secure/fsigk/conf/fsigk.ini
     - name: Install Dependencies
       run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
-    - run: php artisan command:name
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit
