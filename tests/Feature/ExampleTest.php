@@ -18,6 +18,8 @@ class ExampleTest extends TestCase
     {
         var_dump(\DB::table('ramens')->count());
 
+        $this->artisan('command:name')->assertExitCode(0);
+
         $response = $this->get('/');
 
         $response->assertStatus(200);
