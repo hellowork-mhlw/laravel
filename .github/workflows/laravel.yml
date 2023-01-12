@@ -13,9 +13,10 @@ jobs:
     services:
       mysql:
         image: mysql
+        ports:
+          - 3306:3306
         env:
           MYSQL_ROOT_PASSWORD: ''
-          MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: laravel
         options: >-
