@@ -18,9 +18,6 @@ class ExampleTest extends TestCase
      */
     public function test_amphp_vs_pmphp()
     {
-        var_dump(\DB::table('ramens')->count());
-
-        $exitCode = Artisan::call('command:name');
-        $this->assertSame($exitCode, Command::SUCCESS);
+        $this->assertSame(\DB::table('ramens')->count(), 10);
     }
 }
