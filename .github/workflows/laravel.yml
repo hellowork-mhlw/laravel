@@ -43,6 +43,11 @@ jobs:
       run: tar cf /tmp/laravel.tar.gz .
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
         path: /tmp/laravel.tar.gz
     - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact2
+        path: .
+    - uses: actions/upload-artifact@v3
+      with:
+        path: .
