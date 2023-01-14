@@ -62,5 +62,5 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{github.head_ref}}
+        tag_name: aaaaaaaaaaaa
         files: README.md
