@@ -13,5 +13,5 @@ jobs:
     - run: tar --exclude-vcs -cf /tmp/laravel.tar.gz .
     - uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${GITHUB_SHA::7}
+        tag_name: ${{ github.run_number }}
         files: /tmp/laravel.tar.gz
