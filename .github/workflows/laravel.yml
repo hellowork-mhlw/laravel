@@ -44,23 +44,3 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         path: /tmp/laravel.tar.gz
-    - uses: actions/upload-artifact@v3
-      with:
-        name: my-artifact2
-        path: .
-    - uses: actions/upload-artifact@v3
-      with:
-        path: .
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Install Dependencies
-      run: composer install
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: aaaaaaaaaaaab
-        files: README.md
