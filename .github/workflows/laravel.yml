@@ -51,3 +51,26 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         path: .
+
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: laravel
+        options: >-
+          --health-cmd "mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Dependencies
+      run: composer install
+    - name: Release
+      uses: softprops/action-gh-release@v1
