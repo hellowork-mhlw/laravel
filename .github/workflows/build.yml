@@ -11,7 +11,7 @@ jobs:
     - run: composer install
     - run: tar --version
     - uses: mxschmitt/action-tmate@v3
-    - run: tar --exclude-vcs cf /tmp/laravel.tar.gz .
+    - run: tar --exclude-vcs -cf /tmp/laravel.tar.gz .
     - uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ github.sha }}
