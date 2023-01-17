@@ -30,6 +30,7 @@ class test extends Command
      */
     public function handle()
     {
+        var_dump(config('app.var1'));
         $future1 = async(function () {
             echo 'Hello ';
         
