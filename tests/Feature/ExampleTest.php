@@ -16,7 +16,7 @@ class ExampleTest extends TestCase
      */
     public function test_amphp_vs_pmphp()
     {
-//         $exitCode = Artisan::call('command:name');
-//         $this->assertSame($exitCode, Command::SUCCESS);
+        $exitCode = Artisan::call('command:name');
+        $this->assertSame($exitCode, Command::SUCCESS);
     }
 }
