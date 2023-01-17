@@ -47,6 +47,11 @@ jobs:
     - run: php artisan command:name
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit --coverage-html reports
+    - name: Generate badge
+      run: |
+        p=$(printf %.0f $(grep -Pom1 '(?<=aria-valuenow=").*?(?=")' reports/index.html))
+        color=$([[ $p -gt 96 ]] && echo 4c1 || ([[ $p -gt 92 ]] && echo 97CA00 || ([[ $p -gt 79 ]] && echo a4a61d || ([[ $p -gt 64 ]] && echo dfb317 || ([[ $p -gt 44 ]] && echo fe7d37 || ([[ $p -gt 14 ]] && echo e05d44 || echo 9f9f9f))))))
+        wget -O reports/badge.svg https://shields.io/badge/coverage-$p%25-$color?logo=github
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
