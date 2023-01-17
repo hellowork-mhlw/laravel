@@ -16,7 +16,7 @@ $app = new Illuminate\Foundation\Application(
 );
 
 var_dump('getenv');
-var_dump(getenv['GITHUB_ACTIONS']);
+var_dump(getenv('GITHUB_ACTIONS'));
 var_dump('env');
 var_dump(env('GITHUB_ACTIONS'));
 
