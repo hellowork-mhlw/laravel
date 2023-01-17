@@ -1,5 +1,5 @@
 [![tests](https://github.com/hellowork-mhlw/laravel/actions/workflows/laravel.yml/badge.svg)](https://github.com/hellowork-mhlw/laravel/actions/workflows/laravel.yml)
-[![](https://hellowork-mhlw.github.io/laravel/badge.svg)]()
+[![](https://hellowork-mhlw.github.io/laravel/badge.svg)](https://hellowork-mhlw.github.io/laravel)
 ```bash
 php artisan make:migration create_ramens_table
 
