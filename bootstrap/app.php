@@ -15,6 +15,12 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+if (env('GITHUB_ACTIONS')) {
+    var_dump('GITHUB_ACTIONS exists');
+}
+
+putenv('FUGAFUGA=HOGEHOGE');
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
