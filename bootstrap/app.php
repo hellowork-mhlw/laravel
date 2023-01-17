@@ -15,6 +15,11 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+var_dump('$_ENV');
+var_dump($_ENV['GITHUB_ACTIONS']);
+var_dump('env');
+var_dump(env('GITHUB_ACTIONS'));
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
