@@ -1,7 +1,7 @@
 [![tests](https://github.com/hellowork-mhlw/laravel/actions/workflows/laravel.yml/badge.svg)](https://github.com/hellowork-mhlw/laravel/actions/workflows/laravel.yml)
 [![](https://hellowork-mhlw.github.io/laravel/badge.svg?ver=123)](https://hellowork-mhlw.github.io/laravel)
 ![Awesome-IT-Films Badge](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgreybax%2Fawesome-IT-films%2Fmaster%2Fbadge_endpoint.json)
-[![](http://cov.deno.dev)](https://coverage.deno.dev)
+[![](https://cov.deno.dev)](https://cov.deno.dev)
 
 ```bash
 php artisan make:migration create_ramens_table
