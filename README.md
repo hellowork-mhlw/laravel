@@ -3,7 +3,7 @@
 ![Awesome-IT-Films Badge](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgreybax%2Fawesome-IT-films%2Fmaster%2Fbadge_endpoint.json)
 
 aaa
-[![](https://coverage.deno.dev)](aaa)
+[![](https://coverage.deno.dev/badge.svg)](aaa)
 aaa2
 
 ```bash
